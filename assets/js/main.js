@@ -148,3 +148,95 @@ function initMarquee(track, speed = 60) {
 
 // Se aplica automáticamente a las 4 categorías sin repetir código por cada una
 document.querySelectorAll('.skills-cards').forEach(track => initMarquee(track));
+
+// ===================================
+// FILTRO DE PROYECTOS: buscador + botón "Todos"
+// ===================================
+const filterAllBtn = document.querySelector('.filter-btn[data-filter="Todos"]');
+const techInput = document.getElementById('techSearchInput');
+const techList = document.getElementById('techSearchList');
+const projectCards = document.querySelectorAll('.project-card');
+const projectsGrid = document.querySelector('.projects-grid');
+
+// Tecnologías reales, tomadas de Skills (no solo de las cards de proyecto)
+const allSkills = Array.from(document.querySelectorAll('.skill-name')).map(el => el.textContent.trim());
+
+function renderTechList(filterText = '') {
+  const matches = allSkills.filter(t => t.toLowerCase().includes(filterText.toLowerCase()));
+  techList.innerHTML = matches.length
+    ? matches.map(t => `<li role="option" class="tech-option">${t}</li>`).join('')
+    : `<li class="tech-option tech-option-empty">Sin coincidencias</li>`;
+}
+
+function openDropdown() {
+  renderTechList(techInput.value);
+  techList.hidden = false;
+  techInput.setAttribute('aria-expanded', 'true');
+}
+
+function closeDropdown() {
+  techList.hidden = true;
+  techInput.setAttribute('aria-expanded', 'false');
+}
+
+function filterProjects(tech) {
+  let visibleCount = 0;
+
+  projectCards.forEach(card => {
+    const cardTechs = Array.from(card.querySelectorAll('.tech-tag')).map(t => t.textContent.trim());
+    const matches = tech === 'Todos' || cardTechs.includes(tech);
+    card.style.display = matches ? '' : 'none';
+    if (matches) visibleCount++;
+  });
+
+  let emptyMsg = projectsGrid.querySelector('.projects-empty');
+  if (visibleCount === 0) {
+    if (!emptyMsg) {
+      emptyMsg = document.createElement('p');
+      emptyMsg.className = 'projects-empty';
+      projectsGrid.appendChild(emptyMsg);
+    }
+    emptyMsg.textContent = `Aún no tengo proyectos publicados que usen ${tech}. ¡Pronto los habrá!`;
+  } else {
+    emptyMsg?.remove();
+  }
+}
+
+function setActiveFilter(label) {
+  filterAllBtn.classList.toggle('is-active', label === 'Todos');
+  techInput.value = label === 'Todos' ? '' : label;
+  filterProjects(label);
+}
+
+techInput.addEventListener('focus', openDropdown);
+techInput.addEventListener('input', () => renderTechList(techInput.value));
+
+techList.addEventListener('click', (event) => {
+  const option = event.target.closest('.tech-option:not(.tech-option-empty)');
+  if (!option) return;
+  setActiveFilter(option.textContent);
+  closeDropdown();
+});
+
+filterAllBtn.addEventListener('click', () => setActiveFilter('Todos'));
+
+document.addEventListener('click', (event) => {
+  if (!event.target.closest('.tech-search')) closeDropdown();
+});
+
+
+// ===================================
+// TARJETAS DE PROYECTO EXPANDIBLES
+// ===================================
+projectsGrid.addEventListener('click', (event) => {
+  const toggleBtn = event.target.closest('.project-toggle');
+  if (!toggleBtn) return;
+
+  const card = toggleBtn.closest('.project-card');
+  const details = card.querySelector('.project-details');
+  const isOpen = card.classList.toggle('is-expanded');
+
+  toggleBtn.setAttribute('aria-expanded', isOpen);
+  toggleBtn.querySelector('.toggle-icon').textContent = isOpen ? '▴' : '▾';
+  details.style.maxHeight = isOpen ? `${details.scrollHeight}px` : null;
+});

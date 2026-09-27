@@ -27,36 +27,38 @@
 <body>
 
     <!-- CABECERA PRINCIPAL -->
+
     <header class="site-header">
         <div class="container header-inner">
-            <a href="#inicio" class="logo"><img src="assets/img/logord.png" alt="logo" width="40" height="40">
+            <a href="#inicio" class="logo">
+            <img src="assets/img/logord.png" alt="logo" width="40" height="40">
+            </a>
 
+            <nav class="main-nav" id="nav-menu" aria-label="Navegación principal">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="design-system.html">Design System</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            </nav>
 
-            <!-- Botón de Menú Hamburguesa con barras animables por CSS -->
+            <div class="header-actions">
+            <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">
+                <span class="theme-icon">🌙</span>
+            </button>
+
             <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
-
-            <!-- Menú de Navegación Principal -->
-            <nav class="main-nav" id="nav-menu" aria-label="Navegación principal">
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#sobre-mi">Sobre mí</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#proyectos">Proyectos</a></li>
-                    <li><a href="design-system.html">Design System</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
-
-            <!-- Botón selector de tema claro/oscuro -->
-            <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">
-                <span class="theme-icon">🌙</span>
-            </button>
+            </div>
         </div>
     </header>
+ 
 
     <main>
         <!-- Aquí irán las secciones: inicio, sobre-mi, skills, proyectos, contacto -->

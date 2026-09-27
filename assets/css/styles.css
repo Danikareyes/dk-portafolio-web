@@ -171,6 +171,30 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   height: 72px;
+  flex-wrap: nowrap;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  font-size: 1.1rem;
+  border-radius: 50%;
+  background-color: var(--overlay-white-15);
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.theme-toggle:hover {
+  background-color: var(--overlay-white-30);
+  transform: rotate(15deg);
 }
 
 .logo img { height: 40px; width: auto; }

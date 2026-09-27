@@ -62,6 +62,15 @@
   /* === TRANSICIONES === */
   --transition-fast: 0.2s ease;
   --transition-base: 0.3s ease;
+
+}
+  :root[data-theme="dark"] {
+  --color-bg: #1C1815;
+  --color-surface: #2B2420;
+  --color-text: #F3EAE0;
+  --color-text-muted: #B3A89A;
+  --color-border: #3D342C;
+  --color-white: #FFFFFF;
 }
 /* ===================================
    RESET / NORMALIZACIÓN BÁSICA

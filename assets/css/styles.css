@@ -430,6 +430,19 @@ a:hover {
   flex-direction: column;
   gap: var(--space-xl);
 }
+/* ===================================
+   MARQUEE DE SKILLS
+=================================== */
+.marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.skills-cards.is-marquee {
+  flex-wrap: nowrap;
+  width: max-content;
+  will-change: transform;
+}
 
 .category-title {
   margin-bottom: var(--space-md);
@@ -708,6 +721,10 @@ a:hover {
   outline: none;
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgb(166 64 45 / 0.15);
+}
+.form-group input.input-invalid,
+.form-group textarea.input-invalid {
+  border-color: var(--color-primary);
 }
 
 .form-group textarea {

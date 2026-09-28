@@ -1,508 +1,521 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portafolio profesional de Danika Reyes — Desarrollador Web. Proyectos, habilidades y contacto.">
-    <meta name="author" content="Danika Reyes">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio de Mariana Reyes, estudiante de Ingeniería en Software y Licenciada en Administración de Empresas. Proyectos, habilidades y contacto.">
+  <meta name="author" content="Mariana Reyes">
 
-    <title>Danika Reyes — Portafolio Web Profesional</title>
+  <title>Mariana Reyes — Portafolio Web Profesional</title>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
-    <!-- Tipografía Google Fonts (Inter) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Hojas de estilo en orden de cascada -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/design-system.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
 
-    <!-- Hojas de estilo en orden de cascada -->
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/design-system.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-
-    <!-- Script JavaScript (defer para optimizar la carga) -->
-    <script src="assets/js/main.js" defer></script>
+  <!-- JavaScript (defer: se ejecuta cuando el HTML ya está listo) -->
+  <script src="assets/js/main.js" defer></script>
 </head>
 <body>
 
-    <!-- CABECERA PRINCIPAL -->
+  <!-- ==================== CABECERA ==================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#inicio" class="logo">
+        <img src="assets/img/logord.png" alt="Logo de Mariana Reyes" width="80" height="80">
+      </a>
 
-    <header class="site-header">
-        <div class="container header-inner">
-            <a href="#inicio" class="logo">
-            <img src="assets/img/logord.png" alt="logo" width="80" height="80">
-            </a>
+      <nav class="main-nav" id="nav-menu" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="design-system.html">Design System</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
 
-            <nav class="main-nav" id="nav-menu" aria-label="Navegación principal">
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#sobre-mi">Sobre mí</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="design-system.html">Design System</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+      <div class="header-actions">
+        <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema claro u oscuro">
+          <span class="theme-icon">🌙</span>
+        </button>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <section id="inicio" class="hero-section">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <span class="badge-subtitle">👋 Hola, bienvenido a mi portafolio</span>
+          <h1 class="hero-title">
+            Soy <span class="highlight">Mariana Reyes</span>
+          </h1>
+          <h2 class="hero-role">Desarrolladora Web · Estudiante de Ingeniería en Software</h2>
+          <p class="hero-description">
+            Estudiante de Ingeniería en Software con formación en Administración de Empresas.
+            Desarrollo aplicaciones web accesibles y eficientes, pensadas para resolver
+            problemas reales de la comunidad.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
+            <a href="#contacto" class="btn btn-secondary">Contáctame</a>
+          </div>
+        </div>
+
+        <div class="hero-image-wrapper">
+          <img class="profile-img" src="assets/img/profile.jpg" alt="Fotografía profesional de Mariana Reyes" width="480" height="640" loading="eager">
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre-mi" class="section about-section">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Sobre mí</h2>
+          <p class="section-subtitle">Mi trayectoria, mi enfoque técnico y lo que me motiva</p>
+        </header>
+
+        <div class="about-grid">
+          <article class="about-bio">
+            <h3>Perfil profesional</h3>
+            <p>
+              Soy Licenciada en Administración de Empresas y actualmente estudio Ingeniería en
+              Software en la Universidad Estatal de Milagro (UNEMI). He participado en proyectos
+              sociales en La Troncal, colaborado en levantamientos estadísticos de población y
+              bienestar familiar con el INEC, y brindado soporte y mantenimiento preventivo de
+              sistemas informáticos.
+            </p>
+            <p>
+              Llegué a la ingeniería por curiosidad técnica y descubrí que el software puede
+              resolver problemas reales. Mi formación administrativa y mi experiencia de campo
+              me llevan a desarrollar pensando en la viabilidad, la optimización de procesos y el
+              impacto en la comunidad, no solo en el código.
+            </p>
+            <p>
+              En la universidad he construido bases en JavaScript, React, TypeScript, Python y
+              Django. De forma autodidacta avanzo en bases de datos (PostgreSQL y MySQL) y en
+              herramientas Cloud y DevOps como Docker y AWS, aplicándolas en proyectos prácticos.
+            </p>
+          </article>
+
+          <div class="about-education">
+            <h3>Formación, experiencia e intereses</h3>
+            <ul class="education-list">
+              <li class="education-item">
+                <strong>Ingeniería en Software</strong>
+                <span>Universidad Estatal de Milagro (UNEMI) — en curso</span>
+              </li>
+              <li class="education-item">
+                <strong>Licenciatura en Administración de Empresas</strong>
+                <span>Título obtenido</span>
+              </li>
+              <li class="education-item">
+                <strong>Experiencia</strong>
+                <span>Proyectos comunitarios en La Troncal, levantamiento de datos estadísticos (INEC) y soporte técnico informático.</span>
+              </li>
+              <li class="education-item">
+                <strong>Áreas de interés</strong>
+                <span>Desarrollo web fullstack, sistemas de gestión comunitarios, arquitectura de datos y soluciones cloud.</span>
+              </li>
             </ul>
-            </nav>
-
-            <div class="header-actions">
-            <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">
-                <span class="theme-icon">🌙</span>
-            </button>
-
-            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            </div>
+          </div>
         </div>
-    </header>
- 
+      </div>
+    </section>
 
-    <main>
-        <!-- Aquí irán las secciones: inicio, sobre-mi, skills, proyectos, contacto -->
-        <!-- SECCIÓN 1: INICIO / PRESENTACIÓN -->
-        <section id="inicio" class="hero-section">
-            <div class="container hero-container">
-                <div class="hero-content">
-                    <span class="badge-subtitle">👋 Hola, bienvenido a mi portafolio</span>
-                    <h1 class="hero-title">
-                        Soy <span class="highlight">Danika Reyes</span>
-                    </h1>
-                    <h2 class="hero-role">Desarrollador Frontend</h2>
-                    <p class="hero-description">
-                        Apasionada por la creación de soluciones digitales interactivas, accesibles y eficientes. 
-                        Especializándome en tecnologías web modernas y desarrollo de software de alto impacto.
-                    </p>
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Habilidades Técnicas</h2>
+          <p class="section-subtitle">Tecnologías y herramientas con las que trabajo y sigo aprendiendo</p>
+        </header>
 
-                    <div class="hero-buttons">
-                        <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
-                        <a href="#contacto" class="btn btn-secondary">Contáctame</a>
-                    </div>
-                </div>
+        <div class="skills-grid">
 
-                <!-- Imagen o Avatar Profesional -->
-                <div class="hero-media">
-                    <img src="assets/img/profile.jpg" alt="Fotografía profesional de Danika Reyes" width="320" height="320" loading="eager">
-                </div>
+          <div class="skills-category">
+            <h3 class="category-title">Frontend</h3>
+            <div class="marquee-wrapper">
+              <ul class="skills-cards">
+                <li class="skill-card" data-level="intermedio">
+                  <img src="assets/img/icons/html5.svg" alt="" class="skill-icon" width="32" height="32">
+                  <div class="skill-info">
+                    <p class="skill-name">HTML5</p>
+                    <span class="skill-level">Intermedio</span>
+                  </div>
+                </li>
+                <li class="skill-card" data-level="intermedio">
+                  <img src="assets/img/icons/css3.svg" alt="" class="skill-icon" width="32" height="32">
+                  <div class="skill-info">
+                    <p class="skill-name">CSS3</p>
+                    <span class="skill-level">Intermedio</span>
+                  </div>
+                </li>
+                <li class="skill-card" data-level="intermedio">
+                  <img src="assets/img/icons/javascript.svg" alt="" class="skill-icon" width="32" height="32">
+                  <div class="skill-info">
+                    <p class="skill-name">JavaScript</p>
+                    <span class="skill-level">Intermedio</span>
+                  </div>
+                </li>
+                <li class="skill-card" data-level="aprendizaje">
+                  <img src="assets/img/icons/react.svg" alt="" class="skill-icon" width="32" height="32">
+                  <div class="skill-info">
+                    <p class="skill-name">React</p>
+                    <span class="skill-level">En aprendizaje</span>
+                  </div>
+                </li>
+                <li class="skill-card" data-level="basico">
+                  <img src="assets/img/icons/typescript.svg" alt="" class="skill-icon" width="32" height="32">
+                  <div class="skill-info">
+                    <p class="skill-name">TypeScript</p>
+                    <span class="skill-level">Básico</span>
+                  </div>
+                </li>
+              </ul>
             </div>
-        </section>
-        
-        <!-- SECCION SOBRE MI -->
+          </div>
 
-        <section id="sobre-mi" class="section about-section">
-            <div class="container">
-                <header class="section-header">
-                    <h2 class="section-title">Sobre mí</h2>
-                    <p class="section-subtitle">Conoce más sobre mi trayectoria y enfoque profesional</p>
-                </header>
-
-                <div class="about-grid">
-                    <article class="about-bio">
-                        <h3>Perfil profesional</h3>
-                        <p>
-                        Breve párrafo de presentación personal: quién eres, tu motivación
-                        para dedicarte al desarrollo de software y qué tipo de problemas
-                        te gusta resolver.
-                        </p>
-                        <p>
-                        Segundo párrafo, opcional: tu enfoque de trabajo, valores o algo
-                        que te distinga profesionalmente.
-                        </p>
-                    </article>
-
-                    <div class="about-education">
-                        <h3>Formación e intereses</h3>
-                        <ul class="education-list">
-                            <li class="education-item">
-                                <strong>Carrera</strong>
-                                <span>Institución — año en curso o finalización</span>
-                            </li>
-                            <li class="education-item">
-                                <strong>Áreas de interés:</strong>
-                                <span>Desarrollo Frontend, UX/UI, accesibilidad web.</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+          <div class="skills-category">
+            <h3 class="category-title">Backend</h3>
+            <div class="marquee-wrapper">
+              <ul class="skills-cards">
+                <li class="skill-card" data-level="intermedio">
+                  <img src="assets/img/icons/python.svg" alt="" class="skill-icon" width="32" height="32">
+                  <div class="skill-info">
+                    <p class="skill-name">Python</p>
+                    <span class="skill-level">Intermedio</span>
+                  </div>
+                </li>
+                <li class="skill-card" data-level="basico">
+                  <img src="assets/img/icons/django.svg" alt="" class="skill-icon" width="32" height="32">
+                  <div class="skill-info">
+                    <p class="skill-name">Django</p>
+                    <span class="skill-level">Básico</span>
+                  </div>
+                </li>
+              </ul>
             </div>
-        </section>
-        
-         <!-- SECCIÓN 3: HABILIDADES TÉCNICAS (SKILLS) -->
+          </div>
 
-        <section id="skills" class="section skills-section">
-            <div class="container">
-                <header class="section-header">
-                <h2 class="section-title">Habilidades Técnicas</h2>
-                <p class="section-subtitle">Tecnologías y herramientas que domino en el desarrollo de software</p>
-                </header>
-
-                <div class="skills-grid">
-
-                <!-- Categoría 1: Frontend -->
-                <div class="skills-category">
-                    <h3 class="category-title">Frontend</h3>
-                    <div class="marquee-wrapper"> 
-                        <ul class="skills-cards">
-                            <li class="skill-card" data-level="avanzado">
-                                <img src="assets/img/icons/html5.svg" alt="" class="skill-icon" width="32" height="32">
-                                <div class="skill-info">
-                                    <p class="skill-name">HTML5</p>
-                                    <span class="skill-level">Avanzado</span>
-                                </div>
-                            </li>
-                            <li class="skill-card" data-level="avanzado">
-                                <img src="assets/img/icons/css3.svg" alt="" class="skill-icon" width="32" height="32">
-                                <div class="skill-info">
-                                    <p class="skill-name">CSS3</p>
-                                    <span class="skill-level">Avanzado</span>
-                                </div>
-                            </li>
-                            <li class="skill-card" data-level="intermedio">
-                                <img src="assets/img/icons/javascript.svg" alt="" class="skill-icon" width="32" height="32">
-                                <div class="skill-info">
-                                    <p class="skill-name">JavaScript</p>
-                                    <span class="skill-level">Intermedio</span>
-                                </div>
-                            </li>
-                            <li class="skill-card" data-level="intermedio">
-                                <img src="assets/img/icons/react.svg" alt="" class="skill-icon" width="32" height="32">
-                                <div class="skill-info">
-                                    <p class="skill-name">React</p>
-                                    <span class="skill-level">Intermedio</span>
-                                </div>
-                            </li>
-                            <li class="skill-card" data-level="basico">
-                                <img src="assets/img/icons/typescript.svg" alt="" class="skill-icon" width="32" height="32">
-                                <div class="skill-info">
-                                    <p class="skill-name">TypeScript</p>
-                                    <span class="skill-level">Básico</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Categoría 2: Backend -->
-                <div class="skills-category">
-                    <h3 class="category-title">Backend</h3>
-                    <div class="marquee-wrapper"> 
-                        <ul class="skills-cards">
-                            <li class="skill-card" data-level="intermedio">
-                                <img src="assets/img/icons/python.svg" alt="" class="skill-icon" width="32" height="32">
-                                <div class="skill-info">
-                                <p class="skill-name">Python</p>
-                                <span class="skill-level">Intermedio</span>
-                                </div>
-                            </li>
-                            <li class="skill-card" data-level="basico">
-                                <img src="assets/img/icons/django.svg" alt="" class="skill-icon" width="32" height="32">
-                                <div class="skill-info">
-                                <p class="skill-name">Django</p>
-                                <span class="skill-level">Básico</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Categoría 3: Bases de Datos -->
-                <div class="skills-category">
-                    <h3 class="category-title">Bases de Datos</h3>
-                    <div class="marquee-wrapper"> 
-                        <ul class="skills-cards">
-                            <li class="skill-card" data-level="intermedio">
-                                <img src="assets/img/icons/postgresql.svg" alt="" class="skill-icon" width="32" height="32">
-                                <div class="skill-info">
-                                <p class="skill-name">PostgreSQL</p>
-                                <span class="skill-level">Intermedio</span>
-                                </div>
-                            </li>
-                            <li class="skill-card" data-level="intermedio">
-                                <img src="assets/img/icons/mysql.svg" alt="" class="skill-icon" width="32" height="32">
-                                <div class="skill-info">
-                                <p class="skill-name">MySQL</p>
-                                <span class="skill-level">Intermedio</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Categoría 4: Cloud & Herramientas -->
-                <div class="skills-category">
-                    <h3 class="category-title">Cloud &amp; Herramientas</h3>
-                    <div class="marquee-wrapper"> 
-                        <ul class="skills-cards">
-                            <li class="skill-card" data-level="intermedio">
-                                <img src="assets/img/icons/git.svg" alt="" class="skill-icon" width="32" height="32">
-                                <div class="skill-info">
-                                <p class="skill-name">Git &amp; GitHub</p>
-                                <span class="skill-level">Intermedio</span>
-                                </div>
-                            </li>
-                            <li class="skill-card" data-level="basico">
-                                <img src="assets/img/icons/docker.svg" alt="" class="skill-icon" width="32" height="32">
-                                <div class="skill-info">
-                                <p class="skill-name">Docker</p>
-                                <span class="skill-level">Básico</span>
-                                </div>
-                            </li>
-                            <li class="skill-card" data-level="basico">
-                                <img src="assets/img/icons/aws.svg" alt="" class="skill-icon" width="32" height="32">
-                                <div class="skill-info">
-                                <p class="skill-name">AWS</p>
-                                <span class="skill-level">Básico</span>
-                                </div>
-                            </li>
-                            <li class="skill-card" data-level="avanzado">
-                                <img src="assets/img/icons/vscode.svg" alt="" class="skill-icon" width="32" height="32">
-                                <div class="skill-info">
-                                <p class="skill-name">VS Code / Bash</p>
-                                <span class="skill-level">Avanzado</span>
-                                </div>
-                            </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
+          <div class="skills-category">
+            <h3 class="category-title">Bases de Datos</h3>
+            <div class="marquee-wrapper">
+              <ul class="skills-cards">
+                <li class="skill-card" data-level="aprendizaje">
+                  <img src="assets/img/icons/postgresql.svg" alt="" class="skill-icon" width="32" height="32">
+                  <div class="skill-info">
+                    <p class="skill-name">PostgreSQL</p>
+                    <span class="skill-level">En aprendizaje</span>
+                  </div>
+                </li>
+                <li class="skill-card" data-level="intermedio">
+                  <img src="assets/img/icons/mysql.svg" alt="" class="skill-icon" width="32" height="32">
+                  <div class="skill-info">
+                    <p class="skill-name">MySQL</p>
+                    <span class="skill-level">Intermedio</span>
+                  </div>
+                </li>
+              </ul>
             </div>
-        </section>
-     <!-- SECCIÓN 4: PROYECTOS DESTACADOS -->
+          </div>
 
-        <section id="proyectos" class="section projects-section">
-            <div class="container">
-                <header class="section-header">
-                    <h2 class="section-title">Proyectos Destacados</h2>
-                    <p class="section-subtitle">Aplicaciones que he desarrollado aplicando buenas prácticas de código y control de versiones</p>
-                </header>
-                <div class="project-filters">
-                    <button class="filter-btn is-active" data-filter="Todos">Todos</button>
-
-                    <div class="tech-search" id="techSearch">
-                        <input type="text" id="techSearchInput" class="tech-search-input"
-                            placeholder="Buscar tecnología..." autocomplete="off"
-                            role="combobox" aria-expanded="false" aria-controls="techSearchList">
-                        <ul class="tech-search-list" id="techSearchList" role="listbox" hidden></ul>
-                    </div>
-                </div>
-                <div class="projects-grid">
-
-                    <!-- Proyecto 1 -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <img src="assets/img/projects/alertas-basura.jpg"
-                                alt="Captura de pantalla del sistema de Alertas de Recolección de Basura"
-                                loading="lazy" width="400" height="250">
-                        </div>
-
-                        <div class="project-content">
-                            <h3 class="project-title">Sistema de Alertas para Recolección de Basura</h3>
-
-                            <p class="project-description is-clamped">
-                            Aplicación que notifica a los usuarios sobre los horarios y rutas de
-                            recolección de basura en su sector, permitiendo mejor organización
-                            y reducción de residuos acumulados en la vía pública.
-                            </p>
-
-                            <ul class="project-tech-list" data-limit="3">
-                                <li class="tech-tag">HTML5</li>
-                                <li class="tech-tag">CSS3</li>
-                                <li class="tech-tag">JavaScript</li>
-
-                            </ul>
-
-                            <button class="project-toggle" aria-expanded="false">
-                            Ver más detalles <span class="toggle-icon">▾</span>
-                            </button>
-
-                            <div class="project-details">
-                            <p class="project-problem">
-                                <strong>Problema que resuelve:</strong> la falta de información
-                                clara sobre horarios de recolección genera acumulación de basura
-                                y afecta la limpieza urbana.
-                            </p>
-                            </div>
-
-                            <div class="project-links">
-                            <a href="https://github.com/Danikareyes/alertas-recoleccion-basura"
-                                class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-                                Ver repositorio
-                            </a>
-                            <span class="btn btn-disabled" aria-disabled="true">Demo en desarrollo</span>
-                            </div>
-                        </div>
-                    </article>    
-                    <!-- Proyecto 2 -->
-
-                    <article class="project-card">
-                        <div class="project-image">
-                            <img src="assets/img/projects/alertas-basura.jpg"
-                                alt="Captura de pantalla del sistema de Alertas de Recolección de Basura"
-                                loading="lazy" width="400" height="250">
-                        </div>
-
-                        <div class="project-content">
-                            <h3 class="project-title">Sistema de Alertas para Recolección de Basura</h3>
-
-                            <p class="project-description is-clamped">
-                            Aplicación que notifica a los usuarios sobre los horarios y rutas de
-                            recolección de basura en su sector, permitiendo mejor organización
-                            y reducción de residuos acumulados en la vía pública.
-                            </p>
-
-                            <ul class="project-tech-list" data-limit="3">
-                                <li class="tech-tag">HTML5</li>
-                                <li class="tech-tag">CSS3</li>
-                                <li class="tech-tag">JavaScript</li>
-                            </ul>
-
-                            <button class="project-toggle" aria-expanded="false">
-                            Ver más detalles <span class="toggle-icon">▾</span>
-                            </button>
-
-                            <div class="project-details">
-                            <p class="project-problem">
-                                <strong>Problema que resuelve:</strong> la falta de información
-                                clara sobre horarios de recolección genera acumulación de basura
-                                y afecta la limpieza urbana.
-                            </p>
-                            </div>
-
-                            <div class="project-links">
-                            <a href="https://github.com/Danikareyes/alertas-recoleccion-basura"
-                                class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-                                Ver repositorio
-                            </a>
-                            <span class="btn btn-disabled" aria-disabled="true">Demo en desarrollo</span>
-                            </div>
-                        </div>
-                    </article>
-                
-
-                    <!-- Proyecto 3 -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <img src="assets/img/projects/incidencias-ciudadanas.jpg"
-                                alt="Captura de pantalla del sistema de Gestión de Incidencias Ciudadanas"
-                                loading="lazy" width="400" height="250">
-                        </div>
-
-                        <div class="project-content">
-                            <h3 class="project-title">Gestión de Incidencias Ciudadanas</h3>
-
-                            <p class="project-description is-clamped">
-                                Plataforma que permite a los ciudadanos reportar incidencias
-                                urbanas (baches, alumbrado, entre otros) y dar seguimiento a
-                                su estado de resolución.
-                            </p>
-
-                            <ul class="project-tech-list" data-limit="3">
-                                <li class="tech-tag">HTML5</li>
-                                <li class="tech-tag">CSS3</li>
-                                <li class="tech-tag">JavaScript</li>
-                            </ul>
-
-                            <button class="project-toggle" aria-expanded="false">
-                                Ver más detalles <span class="toggle-icon">▾</span>
-                            </button>
-
-                            <div class="project-details">
-                                <p class="project-problem">
-                                    <strong>Problema que resuelve:</strong> la falta de un canal
-                                    centralizado y transparente para reportar y monitorear
-                                    problemas urbanos ante las autoridades competentes.
-                                </p>
-                            </div>
-
-                            <div class="project-links">
-                                <a href="https://github.com/Danikareyes/gestion-incidencias-ciudadanas"
-                                class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-                                Ver repositorio
-                                </a>
-                                <span class="btn btn-disabled" aria-disabled="true">Demo en desarrollo</span>
-                            </div>
-                        </div>
-                    </article>
-
-                </div>
+          <div class="skills-category">
+            <h3 class="category-title">Cloud &amp; Herramientas</h3>
+            <div class="marquee-wrapper">
+              <ul class="skills-cards">
+                <li class="skill-card" data-level="intermedio">
+                  <img src="assets/img/icons/git.svg" alt="" class="skill-icon" width="32" height="32">
+                  <div class="skill-info">
+                    <p class="skill-name">Git &amp; GitHub</p>
+                    <span class="skill-level">Intermedio</span>
+                  </div>
+                </li>
+                <li class="skill-card" data-level="basico">
+                  <img src="assets/img/icons/docker.svg" alt="" class="skill-icon" width="32" height="32">
+                  <div class="skill-info">
+                    <p class="skill-name">Docker</p>
+                    <span class="skill-level">Básico</span>
+                  </div>
+                </li>
+                <li class="skill-card" data-level="basico">
+                  <img src="assets/img/icons/aws.svg" alt="" class="skill-icon" width="32" height="32">
+                  <div class="skill-info">
+                    <p class="skill-name">AWS</p>
+                    <span class="skill-level">Básico</span>
+                  </div>
+                </li>
+                <li class="skill-card" data-level="intermedio">
+                  <img src="assets/img/icons/vscode.svg" alt="" class="skill-icon" width="32" height="32">
+                  <div class="skill-info">
+                    <p class="skill-name">VS Code</p>
+                    <span class="skill-level">Intermedio</span>
+                  </div>
+                </li>
+              </ul>
             </div>
-        </section>
-        <!-- SECCIÓN 5: CONTACTO -->
-        <section id="contacto" class="section contact-section">
-            <div class="container">
-                <header class="section-header">
-                <h2 class="section-title">Contacto</h2>
-                <p class="section-subtitle">¿Tienes un proyecto en mente o una oportunidad laboral? Escríbeme</p>
-                </header>
+          </div>
 
-                <div class="contact-grid">
-
-                <!-- Información de contacto -->
-                <address class="contact-info">
-                    <ul class="contact-list">
-                    <li class="contact-item">
-                        <span class="contact-label">Email</span>
-                        <a href="mailto:danikreyes@gmail.com">danikreyes@gmail.com</a>
-                    </li>
-                    <li class="contact-item">
-                        <span class="contact-label">Teléfono</span>
-                        <a href="tel:+593985058361">+593 98 505 8361</a>
-                    </li>
-                    <li class="contact-item">
-                        <span class="contact-label">Ubicación</span>
-                        <span>La Troncal, Ecuador</span>
-                    </li>
-                    <li class="contact-item">
-                        <span class="contact-label">GitHub</span>
-                        <a href="https://github.com/Danikareyes" target="_blank" rel="noopener noreferrer">@Danikareyes</a>
-                    </li>
-                    </ul>
-                </address>
-
-                <!-- Formulario de contacto -->
-                <form class="contact-form" id="contactForm" novalidate>
-                    <div class="form-group">
-                    <label for="name">Nombre completo</label>
-                    <input type="text" id="name" name="name" required minlength="2" autocomplete="name">
-                    <span class="form-error" id="nameError" aria-live="polite"></span>
-                    </div>
-
-                    <div class="form-group">
-                    <label for="email">Correo electrónico</label>
-                    <input type="email" id="email" name="email" required autocomplete="email">
-                    <span class="form-error" id="emailError" aria-live="polite"></span>
-                    </div>
-
-                    <div class="form-group">
-                    <label for="subject">Asunto</label>
-                    <input type="text" id="subject" name="subject" required minlength="3">
-                    <span class="form-error" id="subjectError" aria-live="polite"></span>
-                    </div>
-
-                    <div class="form-group">
-                    <label for="message">Mensaje</label>
-                    <textarea id="message" name="message" rows="5" required minlength="10"></textarea>
-                    <span class="form-error" id="messageError" aria-live="polite"></span>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Enviar mensaje</button>
-                </form>
-
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="site-footer">
-        <div class="container footer-inner">
-            <p>&copy; 2026 Danika Reyes. Todos los derechos reservados.</p>
-            <p class="footer-credit">Diseñado y desarrollado con estándares HTML5, CSS y JS.</p>
         </div>
-    </footer>    
-    <a href="#inicio" class="back-to-top" id="backToTop" aria-label="Volver al inicio">↑</a> 
-<script src="assets/js/main.js" defer></script>
+      </div>
+    </section>
+
+    <section id="proyectos" class="section projects-section">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Proyectos Destacados</h2>
+          <p class="section-subtitle">Aplicaciones que he desarrollado aplicando buenas prácticas de código y control de versiones</p>
+        </header>
+
+        <div class="project-filters">
+          <button class="filter-btn is-active" data-filter="Todos">Todos</button>
+
+          <div class="tech-search" id="techSearch">
+            <input type="text" id="techSearchInput" class="tech-search-input"
+              placeholder="Buscar tecnología..." autocomplete="off"
+              aria-label="Buscar proyectos por tecnología"
+              role="combobox" aria-expanded="false" aria-controls="techSearchList">
+            <ul class="tech-search-list" id="techSearchList" role="listbox" hidden></ul>
+          </div>
+        </div>
+
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/img/projects/alertas-basura.jpg"
+                alt="Captura de pantalla del sistema de Alertas de Recolección de Basura"
+                loading="lazy" width="400" height="250">
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Sistema de Alertas para Recolección de Basura</h3>
+
+              <p class="project-description is-clamped">
+                Aplicación que notifica a los usuarios sobre los horarios y rutas de
+                recolección de basura en su sector, permitiendo mejor organización
+                y reducción de residuos acumulados en la vía pública.
+              </p>
+
+              <ul class="project-tech-list" data-limit="3">
+                <li class="tech-tag">HTML5</li>
+                <li class="tech-tag">CSS3</li>
+                <li class="tech-tag">JavaScript</li>
+                <li class="tech-tag">Django</li>
+                <li class="tech-tag">AWS</li>
+                <li class="tech-tag">VS Code</li>
+              </ul>
+
+              <div class="project-links">
+                <a href="https://github.com/Danikareyes/alertas-recoleccion-basura"
+                  class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                  Ver repositorio
+                </a>
+                <span class="btn btn-disabled" aria-disabled="true">Demo en desarrollo</span>
+              </div>
+
+              <button class="project-toggle" aria-expanded="false">
+                <span class="toggle-label">Ver más detalles</span>
+                <span class="toggle-icon" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="project-details">
+                <p class="project-problem">
+                  <strong>Problema que resuelve:</strong> la falta de información
+                  clara sobre horarios de recolección genera acumulación de basura
+                  y afecta la limpieza urbana.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/img/projects/trajes-folcloricos.jpg"
+                alt="Captura de pantalla del sistema de Gestión de Trajes Folclóricos"
+                loading="lazy" width="400" height="250">
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Gestión de Trajes Folclóricos</h3>
+
+              <p class="project-description is-clamped">
+                Sistema para administrar el inventario, préstamo y estado de trajes
+                utilizados en presentaciones de danza folclórica, facilitando su
+                control y disponibilidad.
+              </p>
+
+              <ul class="project-tech-list" data-limit="3">
+                <li class="tech-tag">HTML5</li>
+                <li class="tech-tag">CSS3</li>
+                <li class="tech-tag">JavaScript</li>
+                <li class="tech-tag">Python</li>
+                <li class="tech-tag">MySQL</li>
+                <li class="tech-tag">Django</li>
+                <li class="tech-tag">PyCharm</li>
+              </ul>
+
+              <div class="project-links">
+                <a href="https://github.com/Danikareyes/gestion-trajes-folcloricos"
+                  class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                  Ver repositorio
+                </a>
+                <span class="btn btn-disabled" aria-disabled="true">Demo en desarrollo</span>
+              </div>
+
+              <button class="project-toggle" aria-expanded="false">
+                <span class="toggle-label">Ver más detalles</span>
+                <span class="toggle-icon" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="project-details">
+                <p class="project-problem">
+                  <strong>Problema que resuelve:</strong> el control manual de trajes
+                  dificulta saber su disponibilidad, ubicación y estado de
+                  mantenimiento antes de cada presentación.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/img/projects/incidencias-ciudadanas.jpg"
+                alt="Captura de pantalla del sistema de Gestión de Incidencias Ciudadanas"
+                loading="lazy" width="400" height="250">
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Gestión de Incidencias Ciudadanas</h3>
+
+              <p class="project-description is-clamped">
+                Plataforma que permite a los ciudadanos reportar incidencias
+                urbanas (baches, alumbrado, entre otros) y dar seguimiento a
+                su estado de resolución.
+              </p>
+
+              <ul class="project-tech-list" data-limit="3">
+                <li class="tech-tag">HTML5</li>
+                <li class="tech-tag">React</li>
+                <li class="tech-tag">TypeScript</li>
+                <li class="tech-tag">Django</li>
+                <li class="tech-tag">PostgreSQL</li>
+                <li class="tech-tag">Docker</li>
+              </ul>
+
+              <div class="project-links">
+                <a href="https://github.com/Danikareyes/gestion-incidencias-ciudadanas"
+                  class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                  Ver repositorio
+                </a>
+                <span class="btn btn-disabled" aria-disabled="true">Demo en desarrollo</span>
+              </div>
+
+              <button class="project-toggle" aria-expanded="false">
+                <span class="toggle-label">Ver más detalles</span>
+                <span class="toggle-icon" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="project-details">
+                <p class="project-problem">
+                  <strong>Problema que resuelve:</strong> la falta de un canal
+                  centralizado y transparente para reportar y monitorear
+                  problemas urbanos ante las autoridades competentes.
+                </p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section contact-section">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Contacto</h2>
+          <p class="section-subtitle">¿Tienes un proyecto en mente o una oportunidad laboral? Escríbeme</p>
+        </header>
+
+        <div class="contact-grid">
+
+          <address class="contact-info">
+            <ul class="contact-list">
+              <li class="contact-item">
+                <span class="contact-label">Email</span>
+                <a class="contact-value" href="mailto:danikreyes@gmail.com">danikreyes@gmail.com</a>
+              </li>
+              <li class="contact-item">
+                <span class="contact-label">Teléfono</span>
+                <a class="contact-value" href="tel:+593999999999">+593 999999999</a>
+              </li>
+              <li class="contact-item">
+                <span class="contact-label">Ubicación</span>
+                <span class="contact-value">La Troncal, Ecuador</span>
+              </li>
+              <li class="contact-item">
+                <span class="contact-label">GitHub</span>
+                <a class="contact-value" href="https://github.com/Danikareyes" target="_blank" rel="noopener noreferrer">@Danikareyes</a>
+              </li>
+            </ul>
+          </address>
+
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="name">Nombre completo</label>
+              <input type="text" id="name" name="name" required minlength="2" autocomplete="name">
+              <span class="form-error" id="nameError" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+              <span class="form-error" id="emailError" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Asunto</label>
+              <input type="text" id="subject" name="subject" required minlength="3">
+              <span class="form-error" id="subjectError" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message" rows="5" required minlength="10"></textarea>
+              <span class="form-error" id="messageError" aria-live="polite"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+
+            <p class="form-status" id="formStatus" role="status"></p>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Mariana Reyes. Todos los derechos reservados.</p>
+      <p class="footer-credit">Diseñado y desarrollado con estándares HTML5, CSS y JS.</p>
+    </div>
+  </footer>
+
+  <a href="#inicio" class="back-to-top" id="backToTop" aria-label="Volver al inicio">↑</a>
 
 </body>
 </html>

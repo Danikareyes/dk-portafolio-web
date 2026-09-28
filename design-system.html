@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Design System del portafolio: paleta de colores, tipografía, espaciado y componentes reutilizables.">
+  <meta name="author" content="Mariana Reyes">
+
+  <title>Design System — Mariana Reyes</title>
+
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+  <!-- Los mismos estilos y el mismo JavaScript que el sitio principal -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/design-system.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/design-system.js" defer></script>
+</head>
+<body class="ds-page">
+
+  <!-- ==================== CABECERA ==================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/img/logord.png" alt="Logo de Mariana Reyes" width="80" height="80">
+      </a>
+
+      <nav class="main-nav" id="nav-menu" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="index.html#proyectos">Proyectos</a></li>
+          <li><a href="design-system.html" aria-current="page">Design System</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema claro u oscuro">
+          <span class="theme-icon">🌙</span>
+        </button>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ==================== INTRODUCCIÓN ==================== -->
+    <section id="inicio" class="ds-intro">
+      <div class="container">
+        <h1>Design System</h1>
+        <p>
+          Decisiones visuales y componentes reutilizables de este portafolio. Todo lo que ves
+          aquí usa las mismas variables CSS y las mismas clases que el sitio principal: si cambia
+          un valor en <code>:root</code>, cambia en todas partes. Los valores se leen en vivo del
+          CSS: cambia el tema con el botón del encabezado y verás cómo se actualizan.
+        </p>
+
+        <nav class="ds-index" aria-label="Contenido del Design System">
+          <ul>
+            <li><a href="#colores">Colores</a></li>
+            <li><a href="#tipografia">Tipografía</a></li>
+            <li><a href="#espaciado">Espaciado</a></li>
+            <li><a href="#bordes-sombras">Bordes y sombras</a></li>
+            <li><a href="#componentes">Componentes</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+
+    <!-- ==================== COLORES ==================== -->
+    <section id="colores" class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Colores</h2>
+          <p class="section-subtitle">Paleta de marca, superficies y degradados. Cada valor se lee de las variables de <code>:root</code>.</p>
+        </header>
+
+        <div class="ds-group">
+          <h3>Marca</h3>
+          <ul class="ds-swatches">
+            <li class="ds-swatch">
+              <span class="ds-swatch__color ds-bg-primary"></span>
+              <span class="ds-swatch__name">Primary</span>
+              <code>--color-primary</code>
+              <code data-token="--color-primary"></code>
+              <span class="ds-swatch__use">Botones de acción, foco y hover de enlaces</span>
+            </li>
+            <li class="ds-swatch">
+              <span class="ds-swatch__color ds-bg-primary-dark"></span>
+              <span class="ds-swatch__name">Primary dark</span>
+              <code>--color-primary-dark</code>
+              <code data-token="--color-primary-dark"></code>
+              <span class="ds-swatch__use">Footer, bordes de botón y hover</span>
+            </li>
+            <li class="ds-swatch">
+              <span class="ds-swatch__color ds-bg-secondary"></span>
+              <span class="ds-swatch__name">Secondary</span>
+              <code>--color-secondary</code>
+              <code data-token="--color-secondary"></code>
+              <span class="ds-swatch__use">Verde de apoyo de la marca</span>
+            </li>
+            <li class="ds-swatch">
+              <span class="ds-swatch__color ds-bg-secondary-dark"></span>
+              <span class="ds-swatch__name">Secondary dark</span>
+              <code>--color-secondary-dark</code>
+              <code data-token="--color-secondary-dark"></code>
+              <span class="ds-swatch__use">Categorías, etiquetas y textos de apoyo</span>
+            </li>
+            <li class="ds-swatch">
+              <span class="ds-swatch__color ds-bg-accent"></span>
+              <span class="ds-swatch__name">Accent</span>
+              <code>--color-accent</code>
+              <code data-token="--color-accent"></code>
+              <span class="ds-swatch__use">Resaltados, detalles y foco visible</span>
+            </li>
+            <li class="ds-swatch">
+              <span class="ds-swatch__color ds-bg-accent-dark"></span>
+              <span class="ds-swatch__name">Accent dark</span>
+              <code>--color-accent-dark</code>
+              <code data-token="--color-accent-dark"></code>
+              <span class="ds-swatch__use">Nivel intermedio de las skills</span>
+            </li>
+            <li class="ds-swatch">
+              <span class="ds-swatch__color ds-bg-heading-accent"></span>
+              <span class="ds-swatch__name">Heading accent</span>
+              <code>--color-heading-accent</code>
+              <code data-token="--color-heading-accent"></code>
+              <span class="ds-swatch__use">Títulos de tarjetas; se aclara en modo oscuro</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="ds-group">
+          <h3>Superficies y texto</h3>
+          <ul class="ds-swatches">
+            <li class="ds-swatch">
+              <span class="ds-swatch__color ds-bg-bg"></span>
+              <span class="ds-swatch__name">Background</span>
+              <code>--color-bg</code>
+              <code data-token="--color-bg"></code>
+              <span class="ds-swatch__use">Fondo general de la página</span>
+            </li>
+            <li class="ds-swatch">
+              <span class="ds-swatch__color ds-bg-surface"></span>
+              <span class="ds-swatch__name">Surface</span>
+              <code>--color-surface</code>
+              <code data-token="--color-surface"></code>
+              <span class="ds-swatch__use">Secciones alternas y paneles</span>
+            </li>
+            <li class="ds-swatch">
+              <span class="ds-swatch__color ds-bg-card"></span>
+              <span class="ds-swatch__name">Card</span>
+              <code>--color-card</code>
+              <code data-token="--color-card"></code>
+              <span class="ds-swatch__use">Tarjetas y formulario</span>
+            </li>
+            <li class="ds-swatch">
+              <span class="ds-swatch__color ds-bg-text"></span>
+              <span class="ds-swatch__name">Text</span>
+              <code>--color-text</code>
+              <code data-token="--color-text"></code>
+              <span class="ds-swatch__use">Texto principal</span>
+            </li>
+            <li class="ds-swatch">
+              <span class="ds-swatch__color ds-bg-text-muted"></span>
+              <span class="ds-swatch__name">Text muted</span>
+              <code>--color-text-muted</code>
+              <code data-token="--color-text-muted"></code>
+              <span class="ds-swatch__use">Texto secundario y ayudas</span>
+            </li>
+            <li class="ds-swatch">
+              <span class="ds-swatch__color ds-bg-border"></span>
+              <span class="ds-swatch__name">Border</span>
+              <code>--color-border</code>
+              <code data-token="--color-border"></code>
+              <span class="ds-swatch__use">Bordes suaves de tarjetas e inputs</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="ds-group">
+          <h3>Degradados</h3>
+          <ul class="ds-swatches">
+            <li class="ds-swatch">
+              <span class="ds-swatch__color ds-bg-gradient-hero"></span>
+              <span class="ds-swatch__name">Hero</span>
+              <code>--gradient-hero</code>
+              <span class="ds-swatch__use">Fondo del inicio, con 4 paradas (<code>--color-hero-1</code> a <code>-4</code>)</span>
+            </li>
+            <li class="ds-swatch">
+              <span class="ds-swatch__color ds-bg-gradient-header"></span>
+              <span class="ds-swatch__name">Header</span>
+              <code>--gradient-primary</code>
+              <span class="ds-swatch__use">Barra de navegación y menú móvil</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="ds-group">
+          <h3>Transparencias</h3>
+          <p class="ds-group__intro">Capas blancas para usar sobre degradados. En cada muestra, la mitad derecha lleva la capa.</p>
+          <ul class="ds-swatches">
+            <li class="ds-swatch">
+              <span class="ds-swatch__color ds-swatch__color--gradient"><span class="ds-overlay ds-overlay--10"></span></span>
+              <code>--overlay-white-10</code>
+              <code data-token="--overlay-white-10"></code>
+              <span class="ds-swatch__use">Aro alrededor de la foto</span>
+            </li>
+            <li class="ds-swatch">
+              <span class="ds-swatch__color ds-swatch__color--gradient"><span class="ds-overlay ds-overlay--15"></span></span>
+              <code>--overlay-white-15</code>
+              <code data-token="--overlay-white-15"></code>
+              <span class="ds-swatch__use">Insignia del inicio y botón de tema</span>
+            </li>
+            <li class="ds-swatch">
+              <span class="ds-swatch__color ds-swatch__color--gradient"><span class="ds-overlay ds-overlay--30"></span></span>
+              <code>--overlay-white-30</code>
+              <code data-token="--overlay-white-30"></code>
+              <span class="ds-swatch__use">Borde de la foto y estados hover</span>
+            </li>
+            <li class="ds-swatch">
+              <span class="ds-swatch__color ds-swatch__color--gradient"><span class="ds-overlay ds-overlay--60"></span></span>
+              <code>--overlay-white-60</code>
+              <code data-token="--overlay-white-60"></code>
+              <span class="ds-swatch__use">Borde del botón secundario y crédito del footer</span>
+            </li>
+            <li class="ds-swatch">
+              <span class="ds-swatch__color ds-swatch__color--gradient"><span class="ds-overlay ds-overlay--85"></span></span>
+              <code>--overlay-white-85</code>
+              <code data-token="--overlay-white-85"></code>
+              <span class="ds-swatch__use">Descripción del inicio</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== TIPOGRAFÍA ==================== -->
+    <section id="tipografia" class="section ds-section--alt">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Tipografía</h2>
+          <p class="section-subtitle">Dos familias del sistema, sin descargas externas. Los tamaños se adaptan solos al ancho de pantalla con <code>clamp()</code>.</p>
+        </header>
+
+        <div class="ds-group">
+          <h3>Familias</h3>
+          <ul class="ds-fonts">
+            <li class="ds-font">
+              <span class="ds-font__sample ds-font__sample--heading" aria-hidden="true">Aa</span>
+              <div class="ds-font__info">
+                <strong>Títulos</strong>
+                <code>--font-heading</code>
+                <code data-token="--font-heading"></code>
+              </div>
+            </li>
+            <li class="ds-font">
+              <span class="ds-font__sample ds-font__sample--prose" aria-hidden="true">Aa</span>
+              <div class="ds-font__info">
+                <strong>Lectura larga</strong>
+                <code>--font-prose</code>
+                <code data-token="--font-prose"></code>
+              </div>
+            </li>
+            <li class="ds-font">
+              <span class="ds-font__sample ds-font__sample--body" aria-hidden="true">Aa</span>
+              <div class="ds-font__info">
+                <strong>Interfaz y texto general</strong>
+                <code>--font-body</code>
+                <code data-token="--font-body"></code>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="ds-group">
+          <h3>Jerarquía</h3>
+          <ul class="ds-type-list">
+            <li>
+              <p class="ds-type-sample ds-type-h1">Título principal</p>
+              <div class="ds-type-meta">
+                <code>h1 · --fs-h1</code>
+                <code data-token="--fs-h1"></code>
+              </div>
+            </li>
+            <li>
+              <p class="ds-type-sample ds-type-h2">Título de sección</p>
+              <div class="ds-type-meta">
+                <code>h2 · --fs-h2</code>
+                <code data-token="--fs-h2"></code>
+              </div>
+            </li>
+            <li>
+              <p class="ds-type-sample ds-type-h3">Subtítulo o título de tarjeta</p>
+              <div class="ds-type-meta">
+                <code>h3 · --fs-h3</code>
+                <code data-token="--fs-h3"></code>
+              </div>
+            </li>
+            <li>
+              <p class="ds-type-sample ds-type-lead">Texto destacado de introducción, como la descripción del inicio.</p>
+              <div class="ds-type-meta">
+                <code>lead · --fs-lead</code>
+                <code data-token="--fs-lead"></code>
+              </div>
+            </li>
+            <li>
+              <p class="ds-type-sample ds-type-prose">Párrafo de lectura larga, en serif y con interlineado amplio, como el perfil de Sobre mí.</p>
+              <div class="ds-type-meta">
+                <code>prose · --fs-prose</code>
+                <code data-token="--fs-prose"></code>
+              </div>
+            </li>
+            <li>
+              <p class="ds-type-sample">Párrafo de texto general de la interfaz.</p>
+              <div class="ds-type-meta">
+                <code>p · --fs-body</code>
+                <code data-token="--fs-body"></code>
+              </div>
+            </li>
+            <li>
+              <p class="ds-type-sample ds-type-muted">Texto secundario para detalles, ayudas y etiquetas.</p>
+              <div class="ds-type-meta">
+                <code>muted · --fs-small</code>
+                <code data-token="--fs-small"></code>
+              </div>
+            </li>
+            <li>
+              <p class="ds-type-sample">
+                <a href="https://github.com/Danikareyes" target="_blank" rel="noopener noreferrer">Enlace de ejemplo</a>
+                <span class="ds-type-muted">— hereda el color del texto y cambia a primary al pasar el mouse</span>
+              </p>
+              <div class="ds-type-meta">
+                <code>a:hover · --color-primary</code>
+                <code data-token="--color-primary"></code>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== ESPACIADO ==================== -->
+    <section id="espaciado" class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Espaciado</h2>
+          <p class="section-subtitle">Una escala de cinco pasos para márgenes, rellenos y separaciones, más las medidas que se adaptan a la pantalla.</p>
+        </header>
+
+        <div class="ds-group">
+          <h3>Escala</h3>
+          <ul class="ds-space-list">
+            <li>
+              <code class="ds-space-token">--space-xs</code>
+              <span class="ds-space-visual"><span class="ds-space-box ds-space-box--xs"></span></span>
+              <code class="ds-space-value" data-token="--space-xs"></code>
+              <span class="ds-space-use">Separación mínima, como el relleno de los enlaces del menú</span>
+            </li>
+            <li>
+              <code class="ds-space-token">--space-sm</code>
+              <span class="ds-space-visual"><span class="ds-space-box ds-space-box--sm"></span></span>
+              <code class="ds-space-value" data-token="--space-sm"></code>
+              <span class="ds-space-use">Espacio entre botones y etiquetas pequeñas</span>
+            </li>
+            <li>
+              <code class="ds-space-token">--space-md</code>
+              <span class="ds-space-visual"><span class="ds-space-box ds-space-box--md"></span></span>
+              <code class="ds-space-value" data-token="--space-md"></code>
+              <span class="ds-space-use">Relleno base y separación entre elementos</span>
+            </li>
+            <li>
+              <code class="ds-space-token">--space-lg</code>
+              <span class="ds-space-visual"><span class="ds-space-box ds-space-box--lg"></span></span>
+              <code class="ds-space-value" data-token="--space-lg"></code>
+              <span class="ds-space-use">Relleno de paneles y espacio entre tarjetas</span>
+            </li>
+            <li>
+              <code class="ds-space-token">--space-xl</code>
+              <span class="ds-space-visual"><span class="ds-space-box ds-space-box--xl"></span></span>
+              <code class="ds-space-value" data-token="--space-xl"></code>
+              <span class="ds-space-use">Separación entre secciones y relleno del formulario</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="ds-group">
+          <h3>Medidas y movimiento</h3>
+          <dl class="ds-token-list">
+            <div class="ds-token-item">
+              <dt><code>--container-max</code></dt>
+              <dd><code data-token="--container-max"></code><span>Ancho máximo del contenido</span></dd>
+            </div>
+            <div class="ds-token-item">
+              <dt><code>--gutter</code></dt>
+              <dd><code data-token="--gutter"></code><span>Márgenes laterales: crecen con la pantalla</span></dd>
+            </div>
+            <div class="ds-token-item">
+              <dt><code>--header-height</code></dt>
+              <dd><code data-token="--header-height"></code><span>Altura del encabezado (más bajo en móvil)</span></dd>
+            </div>
+            <div class="ds-token-item">
+              <dt><code>--size-avatar</code></dt>
+              <dd><code data-token="--size-avatar"></code><span>Tamaño de la foto del inicio</span></dd>
+            </div>
+            <div class="ds-token-item">
+              <dt><code>--fs-nav</code></dt>
+              <dd><code data-token="--fs-nav"></code><span>Tamaño de texto del menú</span></dd>
+            </div>
+            <div class="ds-token-item">
+              <dt><code>--transition-fast</code></dt>
+              <dd><code data-token="--transition-fast"></code><span>Hover de botones, enlaces y campos</span></dd>
+            </div>
+            <div class="ds-token-item">
+              <dt><code>--transition-base</code></dt>
+              <dd><code data-token="--transition-base"></code><span>Tarjetas, menú móvil y expansión de detalles</span></dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== BORDES Y SOMBRAS ==================== -->
+    <section id="bordes-sombras" class="section ds-section--alt">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Bordes y sombras</h2>
+          <p class="section-subtitle">Radios y sombras compartidos por tarjetas, botones, campos y paneles.</p>
+        </header>
+
+        <div class="ds-group">
+          <h3>Radios</h3>
+          <ul class="ds-boxes">
+            <li class="ds-box ds-box--radius-sm">
+              <strong>Small</strong>
+              <code>--radius-sm</code>
+              <code data-token="--radius-sm"></code>
+            </li>
+            <li class="ds-box ds-box--radius-md">
+              <strong>Medium</strong>
+              <code>--radius-md</code>
+              <code data-token="--radius-md"></code>
+            </li>
+            <li class="ds-box ds-box--radius-lg">
+              <strong>Large</strong>
+              <code>--radius-lg</code>
+              <code data-token="--radius-lg"></code>
+            </li>
+            <li class="ds-box ds-box--radius-full">
+              <strong>Full</strong>
+              <code>--radius-full</code>
+              <code data-token="--radius-full"></code>
+            </li>
+          </ul>
+        </div>
+
+        <div class="ds-group">
+          <h3>Sombras</h3>
+          <ul class="ds-boxes">
+            <li class="ds-box ds-box--radius-md ds-box--shadow-card">
+              <strong>Card</strong>
+              <code>--shadow-card</code>
+              <code data-token="--shadow-card"></code>
+            </li>
+            <li class="ds-box ds-box--radius-md ds-box--shadow-hover">
+              <strong>Card hover</strong>
+              <code>--shadow-card-hover</code>
+              <code data-token="--shadow-card-hover"></code>
+            </li>
+            <li class="ds-box ds-box--radius-md ds-box--shadow-float">
+              <strong>Float</strong>
+              <code>--shadow-float</code>
+              <code data-token="--shadow-float"></code>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== COMPONENTES ==================== -->
+    <section id="componentes" class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Componentes</h2>
+          <p class="section-subtitle">Las piezas reutilizables del portafolio, con el mismo código del sitio principal. Las interactivas funcionan en esta página.</p>
+        </header>
+
+        <!-- Navbar -->
+        <div class="ds-group">
+          <h3>Navbar</h3>
+          <figure class="ds-specimen">
+            <div class="ds-preview ds-preview--flush" inert>
+              <header class="site-header">
+                <div class="container header-inner">
+                  <a href="index.html" class="logo">
+                    <img src="assets/img/logord.png" alt="" width="80" height="80">
+                  </a>
+
+                  <nav class="main-nav" aria-label="Ejemplo de navegación">
+                    <ul>
+                      <li><a href="index.html#inicio">Inicio</a></li>
+                      <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+                      <li><a href="index.html#skills">Skills</a></li>
+                      <li><a href="index.html#proyectos">Proyectos</a></li>
+                      <li><a href="design-system.html" aria-current="page">Design System</a></li>
+                      <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                  </nav>
+
+                  <div class="header-actions">
+                    <button class="theme-toggle" aria-label="Cambiar tema"><span class="theme-icon">🌙</span></button>
+                    <button class="nav-toggle" aria-label="Abrir menú">
+                      <span class="bar"></span>
+                      <span class="bar"></span>
+                      <span class="bar"></span>
+                    </button>
+                  </div>
+                </div>
+              </header>
+            </div>
+            <figcaption>
+              <code>.site-header</code> con <code>.main-nav</code>, <code>.theme-toggle</code> y <code>.nav-toggle</code>
+              (el botón hamburguesa aparece en pantallas de hasta 768px). La página actual usa
+              <code>aria-current="page"</code>. El encabezado fijo de esta página es el mismo componente en uso.
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- Botones -->
+        <div class="ds-group">
+          <h3>Botones</h3>
+          <div class="ds-specimens">
+            <figure class="ds-specimen">
+              <div class="ds-preview ds-preview--gradient">
+                <span class="badge-subtitle">👋 Insignia del inicio</span>
+                <div class="hero-buttons">
+                  <a href="index.html#proyectos" class="btn btn-primary">Botón primario</a>
+                  <a href="index.html#contacto" class="btn btn-secondary">Botón secundario</a>
+                </div>
+              </div>
+              <figcaption>
+                <code>.btn-primary</code> y <code>.btn-secondary</code> dentro de <code>.hero-buttons</code>, más la
+                insignia <code>.badge-subtitle</code>. Están pensados para fondos con degradado.
+              </figcaption>
+            </figure>
+
+            <figure class="ds-specimen">
+              <div class="ds-preview">
+                <div class="project-links">
+                  <a href="https://github.com/Danikareyes" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
+                  <span class="btn btn-disabled" aria-disabled="true">Demo en desarrollo</span>
+                </div>
+              </div>
+              <figcaption>
+                <code>.btn-secondary</code> sobre superficie clara (dentro de <code>.project-links</code>) y
+                <code>.btn-disabled</code> para acciones aún no disponibles. <code>.btn-primary</code> toma el
+                color de marca dentro del formulario (ver Formulario).
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- Skills y etiquetas -->
+        <div class="ds-group">
+          <h3>Skills y etiquetas</h3>
+          <div class="ds-specimens">
+            <figure class="ds-specimen">
+              <div class="ds-preview">
+                <ul class="ds-row">
+                  <li class="skill-card" data-level="intermedio">
+                    <img src="assets/img/icons/html5.svg" alt="" class="skill-icon" width="32" height="32">
+                    <div class="skill-info">
+                      <p class="skill-name">HTML5</p>
+                      <span class="skill-level">Intermedio</span>
+                    </div>
+                  </li>
+                  <li class="skill-card" data-level="basico">
+                    <img src="assets/img/icons/typescript.svg" alt="" class="skill-icon" width="32" height="32">
+                    <div class="skill-info">
+                      <p class="skill-name">TypeScript</p>
+                      <span class="skill-level">Básico</span>
+                    </div>
+                  </li>
+                  <li class="skill-card" data-level="aprendizaje">
+                    <img src="assets/img/icons/react.svg" alt="" class="skill-icon" width="32" height="32">
+                    <div class="skill-info">
+                      <p class="skill-name">React</p>
+                      <span class="skill-level">En aprendizaje</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <figcaption>
+                <code>.skill-card</code> con el atributo <code>data-level</code>: el color del nivel cambia sin
+                clases extra (<code>intermedio</code>, <code>basico</code> y <code>aprendizaje</code>).
+              </figcaption>
+            </figure>
+
+            <figure class="ds-specimen">
+              <div class="ds-preview">
+                <ul class="ds-tag-row">
+                  <li class="tech-tag">HTML5</li>
+                  <li class="tech-tag">CSS3</li>
+                  <li class="tech-tag">JavaScript</li>
+                  <li class="tech-tag tech-tag-more">+2 más</li>
+                </ul>
+              </div>
+              <figcaption>
+                <code>.tech-tag</code> para cada tecnología y <code>.tech-tag-more</code>, que aparece cuando un
+                proyecto supera su <code>data-limit</code>.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- Filtro y card de proyecto -->
+        <div class="ds-group">
+          <h3>Card de proyecto y filtro</h3>
+          <figure class="ds-specimen">
+            <div class="ds-preview ds-preview--block">
+              <div class="project-filters">
+                <button class="filter-btn is-active" data-filter="Todos">Todos</button>
+
+                <div class="tech-search" id="techSearch">
+                  <input type="text" id="techSearchInput" class="tech-search-input"
+                    placeholder="Buscar tecnología..." autocomplete="off"
+                    aria-label="Buscar proyectos por tecnología"
+                    role="combobox" aria-expanded="false" aria-controls="techSearchList">
+                  <ul class="tech-search-list" id="techSearchList" role="listbox" hidden></ul>
+                </div>
+              </div>
+
+              <div class="projects-grid ds-projects-demo">
+                <article class="project-card">
+                  <div class="project-image">
+                    <img src="assets/img/projects/alertas-basura.jpg"
+                      alt="Captura de pantalla de ejemplo de un proyecto"
+                      loading="lazy" width="400" height="250">
+                  </div>
+
+                  <div class="project-content">
+                    <h3 class="project-title">Nombre del proyecto</h3>
+
+                    <p class="project-description is-clamped">
+                      Descripción breve de lo que hace el proyecto y para quién está pensado. Se recorta
+                      a tres líneas para que todas las tarjetas mantengan la misma altura.
+                    </p>
+
+                    <ul class="project-tech-list" data-limit="3">
+                      <li class="tech-tag">HTML5</li>
+                      <li class="tech-tag">CSS3</li>
+                      <li class="tech-tag">JavaScript</li>
+                      <li class="tech-tag">Python</li>
+                      <li class="tech-tag">Django</li>
+                    </ul>
+
+                    <div class="project-links">
+                      <a href="https://github.com/Danikareyes" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
+                      <span class="btn btn-disabled" aria-disabled="true">Demo en desarrollo</span>
+                    </div>
+
+                    <button class="project-toggle" aria-expanded="false">
+                      <span class="toggle-label">Ver más detalles</span>
+                      <span class="toggle-icon" aria-hidden="true">▾</span>
+                    </button>
+
+                    <div class="project-details">
+                      <p class="project-problem">
+                        <strong>Problema que resuelve:</strong> la necesidad concreta que atiende el proyecto.
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <figcaption>
+              <code>.project-card</code> con <code>.project-filters</code> (<code>.filter-btn</code> y
+              <code>.tech-search-input</code>). Es funcional: pulsa «Ver más detalles» o elige una tecnología
+              en el buscador. La lista del buscador toma las skills de esta página; en el sitio principal
+              incluye todas.
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- Tarjetas de contacto -->
+        <div class="ds-group">
+          <h3>Tarjetas de contacto</h3>
+          <figure class="ds-specimen">
+            <div class="ds-preview ds-preview--block">
+              <address class="contact-info ds-contact-demo">
+                <ul class="contact-list">
+                  <li class="contact-item">
+                    <span class="contact-label">Email</span>
+                    <a class="contact-value" href="mailto:danikreyes@gmail.com">danikreyes@gmail.com</a>
+                  </li>
+                  <li class="contact-item">
+                    <span class="contact-label">Ubicación</span>
+                    <span class="contact-value">La Troncal, Ecuador</span>
+                  </li>
+                </ul>
+              </address>
+            </div>
+            <figcaption>
+              <code>.contact-item</code> con <code>.contact-label</code> y <code>.contact-value</code>, dentro de
+              un <code>&lt;address&gt;</code>. Si el valor es un enlace, toda la tarjeta es clicable.
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- Formulario -->
+        <div class="ds-group">
+          <h3>Formulario: inputs y textarea</h3>
+          <div class="ds-specimens">
+            <figure class="ds-specimen">
+              <form class="contact-form ds-form-demo" id="contactForm" novalidate>
+                <div class="form-group">
+                  <label for="name">Nombre completo</label>
+                  <input type="text" id="name" name="name" required minlength="2" autocomplete="name">
+                  <span class="form-error" id="nameError" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Correo electrónico</label>
+                  <input type="email" id="email" name="email" required autocomplete="email">
+                  <span class="form-error" id="emailError" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="subject">Asunto</label>
+                  <input type="text" id="subject" name="subject" required minlength="3">
+                  <span class="form-error" id="subjectError" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="message">Mensaje</label>
+                  <textarea id="message" name="message" rows="5" required minlength="10"></textarea>
+                  <span class="form-error" id="messageError" aria-live="polite"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+
+                <p class="form-status" id="formStatus" role="status"></p>
+              </form>
+              <figcaption>
+                <code>.form-group</code> con <code>label</code>, <code>input</code>, <code>textarea</code> y
+                <code>.form-error</code>; el botón usa <code>.btn-primary</code> en color de marca. Es funcional:
+                deja un campo vacío y sal de él para ver la validación.
+              </figcaption>
+            </figure>
+
+            <figure class="ds-specimen">
+              <div class="ds-preview ds-stack">
+                <div class="form-group">
+                  <label for="demoInvalid">Campo con error</label>
+                  <input type="text" id="demoInvalid" class="input-invalid" value="a">
+                  <span class="form-error">El asunto debe tener al menos 3 caracteres.</span>
+                </div>
+                <p class="form-status is-success">¡Mensaje enviado correctamente!</p>
+                <p class="form-status is-error">No se pudo enviar el mensaje. Inténtalo de nuevo.</p>
+                <p class="form-status">Aviso informativo sobre el estado del formulario.</p>
+              </div>
+              <figcaption>
+                Estados: <code>.input-invalid</code> con <code>.form-error</code>, y <code>.form-status</code> en sus
+                variantes <code>.is-success</code>, <code>.is-error</code> y la base informativa.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- Otros componentes -->
+        <div class="ds-group">
+          <h3>Otros componentes</h3>
+          <ul class="ds-notes">
+            <li><code>.section-header</code>: título y subtítulo centrados. Abre cada sección de esta página y del sitio principal.</li>
+            <li><code>.back-to-top</code>: botón fijo abajo a la derecha. Aparece después de bajar 400px; pruébalo en esta página.</li>
+            <li><code>.theme-toggle</code>: cambia entre tema claro y oscuro y guarda la preferencia en <code>localStorage</code>.</li>
+            <li><code>.marquee-wrapper</code> con <code>.skills-cards.is-marquee</code>: cinta de skills que se pausa al pasar el mouse. Se ve en el sitio principal.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Mariana Reyes. Todos los derechos reservados.</p>
+      <p class="footer-credit">Diseñado y desarrollado con estándares HTML5, CSS y JS.</p>
+    </div>
+  </footer>
+
+  <a href="#inicio" class="back-to-top" id="backToTop" aria-label="Volver al inicio">↑</a>
+
+</body>
+</html>

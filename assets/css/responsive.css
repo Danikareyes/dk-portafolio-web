@@ -1,46 +1,39 @@
-/* =========================================================
-   RESPONSIVE DESIGN
-   Breakpoints: Tablet (≤1024px) | Móvil (≤768px) | Móvil pequeño (≤480px)
-========================================================= */
+/* ==========================================================================
+   RESPONSIVE.CSS — Portafolio Danika Reyes
+   Solo contiene lo que CAMBIA en pantallas pequeñas. Todo lo demás vive en
+   styles.css, que debe cargarse antes que este archivo.
 
-/* ===================================
+   Breakpoints: Tablet (≤1024px) | Móvil (≤768px) | Móvil pequeño (≤480px)
+   ========================================================================== */
+
+
+/* ==========================================================================
    TABLET (≤1024px)
-=================================== */
+   ========================================================================== */
 @media (max-width: 1024px) {
 
-  .hero-container {
-    gap: var(--space-lg);
-  }
+  .hero-container { gap: var(--space-lg); }
 
-  .profile-figure {
-    width: 260px;
-    height: 260px;
-  }
-
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
+  .about-grid,
+  .contact-grid { grid-template-columns: 1fr; }
 
   .projects-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   }
 }
 
 
-/* ===================================
+/* ==========================================================================
    MÓVIL (≤768px)
-=================================== */
+   ========================================================================== */
 @media (max-width: 768px) {
 
-  .container {
-    padding: 0 var(--space-md);
-  }
+  /* Un header más bajo: el logo, el body y el menú se ajustan solos */
+  :root { --header-height: 72px; }
 
-  /* --- Navegación: activa el menú hamburguesa --- */
+  .container { padding: 0 var(--space-md); }
+
+  /* --- Navegación: menú hamburguesa --- */
   .nav-toggle {
     display: flex;
     z-index: 1100;
@@ -48,19 +41,17 @@
 
   .main-nav {
     position: fixed;
-    top: 72px;
+    top: var(--header-height);
     left: 0;
     width: 100%;
-    height: calc(100vh - 72px);
+    height: calc(100vh - var(--header-height));
+    overflow-y: auto;
     background: var(--gradient-primary);
     transform: translateX(-100%);
     transition: transform var(--transition-base);
-    overflow-y: auto;
   }
 
-  .main-nav.is-open {
-    transform: translateX(0);
-  }
+  .main-nav.is-open { transform: translateX(0); }
 
   .main-nav ul {
     flex-direction: column;
@@ -70,31 +61,17 @@
     gap: var(--space-lg);
   }
 
-  .main-nav a {
-    font-size: 1.1rem;
-  }
+  .main-nav a { font-size: 1.1rem; }
 
-  /* Animación del ícono hamburguesa a "X" cuando está activo */
-  .nav-toggle.is-active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
+  /* Hamburguesa → "X" (3px de barra + 5px de gap = 8px de desplazamiento) */
+  .nav-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .nav-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+  .nav-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-  .nav-toggle.is-active .bar:nth-child(2) {
-    opacity: 0;
-  }
-
-  .nav-toggle.is-active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-
-  /* --- Hero: apila texto e imagen --- */
+  /* --- Hero: imagen arriba, texto abajo --- */
   .hero-container {
     flex-direction: column-reverse;
     text-align: center;
-  }
-
-  .hero-content {
-    max-width: 100%;
   }
 
   .hero-description {
@@ -102,35 +79,22 @@
     margin-inline: auto;
   }
 
-  .hero-buttons {
-    justify-content: center;
-  }
+  .hero-buttons { justify-content: center; }
 
-  .profile-figure {
-    width: 220px;
-    height: 220px;
-  }
-
-  /* --- Skills: cards a ancho completo --- */
-  .skill-card {
-    flex: 1 1 100%;
-  }
+  /* --- Skills: en las categorías sin marquee, cards a ancho completo --- */
+  .skills-cards:not(.is-marquee) .skill-card { flex: 1 1 100%; }
 
   /* --- Proyectos: una columna --- */
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
+  .projects-grid { grid-template-columns: 1fr; }
 
-  /* --- Contacto: formulario con menos padding --- */
-  .contact-form {
-    padding: var(--space-lg);
-  }
+  /* --- Contacto --- */
+  .contact-form { padding: var(--space-lg); }
 }
 
 
-/* ===================================
+/* ==========================================================================
    MÓVIL PEQUEÑO (≤480px)
-=================================== */
+   ========================================================================== */
 @media (max-width: 480px) {
 
   .hero-buttons {
@@ -139,39 +103,20 @@
   }
 
   .hero-buttons .btn {
-    text-align: center;
     width: 100%;
-  }
-
-  .profile-figure {
-    width: 180px;
-    height: 180px;
+    text-align: center;
   }
 
   .about-education,
-  .contact-form {
-    padding: var(--space-md);
-  }
+  .contact-form,
+  .project-content { padding: var(--space-md); }
 
-  .project-content {
-    padding: var(--space-md);
-  }
-
-  .project-links {
-    flex-direction: column;
-  }
+  .project-links { flex-direction: column; }
 
   .project-links .btn-secondary,
-  .btn-disabled {
+  .project-links .btn-disabled {
     width: 100%;
     text-align: center;
   }
-}
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 72px;
-  flex-wrap: nowrap; /* evita que el botón "caiga" a una segunda línea */
 }
 

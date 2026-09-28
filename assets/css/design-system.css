@@ -1,0 +1,420 @@
+/* ==========================================================================
+   DESIGN-SYSTEM.CSS — Página de documentación (design-system.html)
+
+   Aquí NO se redefine ningún componente: botones, cards, formulario, skills,
+   navbar, etc. usan exactamente las clases y variables de styles.css.
+   Este archivo solo contiene el layout de la documentación (prefijo .ds-)
+   y el estado de navegación activa.
+
+   Orden: 1) Navegación  2) Introducción  3) Estructura  4) Colores
+          5) Tipografía  6) Espaciado y medidas  7) Bordes y sombras
+          8) Muestras de componentes
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. NAVEGACIÓN: enlace de la página actual
+   ========================================================================== */
+.main-nav a[aria-current="page"]::after { width: 100%; }
+
+
+/* ==========================================================================
+   2. INTRODUCCIÓN E ÍNDICE
+   ========================================================================== */
+.ds-intro {
+  padding: var(--space-xl) 0;
+  color: var(--color-white);
+  background: var(--gradient-hero);
+}
+
+.ds-intro h1 {
+  margin-bottom: var(--space-md);
+  color: var(--color-white);
+}
+
+.ds-intro p {
+  max-width: 62ch;
+  margin-bottom: var(--space-lg);
+  font-size: var(--fs-lead);
+  color: var(--overlay-white-85);
+}
+
+.ds-intro code { color: var(--color-white); }
+
+.ds-index ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.ds-index a {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: var(--color-white);
+  background-color: var(--overlay-white-15);
+  border-radius: var(--radius-full);
+  transition: background-color var(--transition-fast);
+}
+
+.ds-index a:hover {
+  color: var(--color-white);
+  background-color: var(--overlay-white-30);
+}
+
+
+/* ==========================================================================
+   3. ESTRUCTURA COMÚN
+   ========================================================================== */
+.ds-section--alt { background-color: var(--color-surface); }
+
+.ds-group + .ds-group { margin-top: var(--space-xl); }
+
+.ds-group > h3 {
+  margin-bottom: var(--space-md);
+  color: var(--color-heading-accent);
+}
+
+.ds-group__intro {
+  max-width: 70ch;
+  margin-bottom: var(--space-md);
+  color: var(--color-text-muted);
+}
+
+.ds-page code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  overflow-wrap: anywhere;
+}
+
+
+/* ==========================================================================
+   4. COLORES
+   ========================================================================== */
+.ds-swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 12rem), 1fr));
+  gap: var(--space-md);
+}
+
+.ds-swatch {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-sm);
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.ds-swatch__color {
+  height: 4.5rem;
+  margin-bottom: var(--space-xs);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.ds-swatch__name { font-weight: 600; }
+
+.ds-swatch__use {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+.ds-bg-primary { background: var(--color-primary); }
+.ds-bg-primary-dark { background: var(--color-primary-dark); }
+.ds-bg-secondary { background: var(--color-secondary); }
+.ds-bg-secondary-dark { background: var(--color-secondary-dark); }
+.ds-bg-accent { background: var(--color-accent); }
+.ds-bg-accent-dark { background: var(--color-accent-dark); }
+.ds-bg-heading-accent { background: var(--color-heading-accent); }
+.ds-bg-bg { background: var(--color-bg); }
+.ds-bg-surface { background: var(--color-surface); }
+.ds-bg-card { background: var(--color-card); }
+.ds-bg-text { background: var(--color-text); }
+.ds-bg-text-muted { background: var(--color-text-muted); }
+.ds-bg-border { background: var(--color-border); }
+.ds-bg-gradient-hero { background: var(--gradient-hero); }
+.ds-bg-gradient-header { background: var(--gradient-primary); }
+
+/* Transparencias: mitad izquierda sin capa, mitad derecha con la capa */
+.ds-swatch__color--gradient {
+  position: relative;
+  overflow: hidden;
+  background: var(--gradient-hero);
+}
+
+.ds-overlay {
+  position: absolute;
+  inset: 0 0 0 50%;
+}
+
+.ds-overlay--10 { background: var(--overlay-white-10); }
+.ds-overlay--15 { background: var(--overlay-white-15); }
+.ds-overlay--30 { background: var(--overlay-white-30); }
+.ds-overlay--60 { background: var(--overlay-white-60); }
+.ds-overlay--85 { background: var(--overlay-white-85); }
+
+
+/* ==========================================================================
+   5. TIPOGRAFÍA
+   ========================================================================== */
+.ds-fonts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.ds-font {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.ds-font__sample {
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--color-heading-accent);
+}
+
+.ds-font__sample--heading {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.ds-font__sample--body {
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+
+.ds-font__sample--prose { font-family: var(--font-prose); }
+
+.ds-font__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.ds-type-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-sm) var(--space-lg);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.ds-type-sample { flex: 1 1 20rem; }
+
+.ds-type-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+/* Las muestras usan <p> (no <h1>) para no duplicar encabezados en el documento */
+.ds-type-h1,
+.ds-type-h2,
+.ds-type-h3 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+}
+
+.ds-type-h1 { font-size: var(--fs-h1); }
+.ds-type-h2 { font-size: var(--fs-h2); }
+.ds-type-h3 { font-size: var(--fs-h3); }
+.ds-type-lead { font-size: var(--fs-lead); }
+
+.ds-type-prose {
+  font-family: var(--font-prose);
+  font-size: var(--fs-prose);
+  line-height: 1.8;
+}
+
+.ds-type-muted {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+
+/* ==========================================================================
+   6. ESPACIADO Y MEDIDAS
+   ========================================================================== */
+.ds-space-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm) var(--space-md);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.ds-space-token { flex: 0 0 8rem; }
+
+.ds-space-visual {
+  display: flex;
+  flex: 0 0 4rem;
+  align-items: center;
+}
+
+.ds-space-box {
+  aspect-ratio: 1;
+  background-color: var(--color-primary);
+}
+
+.ds-space-box--xs { width: var(--space-xs); }
+.ds-space-box--sm { width: var(--space-sm); }
+.ds-space-box--md { width: var(--space-md); }
+.ds-space-box--lg { width: var(--space-lg); }
+.ds-space-box--xl { width: var(--space-xl); }
+
+.ds-space-value { flex: 0 0 5rem; }
+
+.ds-space-use {
+  flex: 1 1 14rem;
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+.ds-token-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: var(--space-md);
+}
+
+.ds-token-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-md);
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.ds-token-item dd {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.ds-token-item span {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+
+/* ==========================================================================
+   7. BORDES Y SOMBRAS
+   ========================================================================== */
+.ds-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+}
+
+.ds-box {
+  display: flex;
+  flex: 1 1 10rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  min-height: 7rem;
+  padding: var(--space-md);
+  text-align: center;
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+}
+
+.ds-box--radius-sm { border-radius: var(--radius-sm); }
+.ds-box--radius-md { border-radius: var(--radius-md); }
+.ds-box--radius-lg { border-radius: var(--radius-lg); }
+.ds-box--radius-full { border-radius: var(--radius-full); }
+
+.ds-box--shadow-card { box-shadow: var(--shadow-card); }
+.ds-box--shadow-hover { box-shadow: var(--shadow-card-hover); }
+.ds-box--shadow-float { box-shadow: var(--shadow-float); }
+
+
+/* ==========================================================================
+   8. MUESTRAS DE COMPONENTES
+   ========================================================================== */
+.ds-specimens {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  gap: var(--space-lg);
+}
+
+.ds-specimen figcaption {
+  margin-top: var(--space-sm);
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+.ds-specimen figcaption code { font-size: 0.75rem; }
+
+.ds-preview {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.ds-preview--gradient {
+  background: var(--gradient-hero);
+  border: none;
+}
+
+.ds-preview--block { display: block; }
+
+.ds-preview--flush {
+  padding: 0;
+  overflow: hidden;
+}
+
+.ds-stack {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.ds-preview .site-header { position: relative; }
+
+.ds-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.ds-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.ds-specimen .project-filters {
+  justify-content: flex-start;
+  margin-bottom: var(--space-lg);
+}
+
+.ds-projects-demo { max-width: 26rem; }
+.ds-contact-demo { max-width: 32rem; }
+.ds-form-demo { max-width: 36rem; }
+
+.ds-notes li {
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+}

@@ -1,6 +1,3 @@
-// ===================================
-// MENÚ RESPONSIVE (HAMBURGUESA)
-// ===================================
 const navToggle = document.getElementById('navToggle');
 const mainNav = document.getElementById('nav-menu');
 
@@ -10,7 +7,6 @@ navToggle.addEventListener('click', () => {
   navToggle.setAttribute('aria-expanded', isOpen);
 });
 
-// Cierra el menú automáticamente al hacer clic en un link (mejora UX en móvil)
 const navLinks = mainNav.querySelectorAll('a');
 navLinks.forEach(link => {
   link.addEventListener('click', () => {
@@ -19,14 +15,11 @@ navLinks.forEach(link => {
     navToggle.setAttribute('aria-expanded', false);
   });
 });
-// ===================================
-// TEMA CLARO / OSCURO
-// ===================================
+
 const themeToggle = document.getElementById('themeToggle');
 const themeIcon = themeToggle.querySelector('.theme-icon');
 const htmlElement = document.documentElement;
 
-// Al cargar la página: revisa si el usuario ya eligió un tema antes
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
   htmlElement.setAttribute('data-theme', savedTheme);
@@ -42,13 +35,9 @@ themeToggle.addEventListener('click', () => {
 
   localStorage.setItem('theme', newTheme);
 });
-// ===================================
-// VALIDACIÓN DEL FORMULARIO DE CONTACTO
-// ===================================
+
 const contactForm = document.getElementById('contactForm');
 
-// Cada campo describe su propia regla de validación — agregar un campo nuevo
-// en el futuro solo requiere una línea aquí, no una función nueva.
 const fields = [
   {
     input: document.getElementById('name'),
@@ -76,7 +65,6 @@ const fields = [
   }
 ];
 
-// Valida un solo campo y muestra/oculta su mensaje de error
 function validateField(field) {
   const isValid = field.validate(field.input.value);
   field.error.textContent = isValid ? '' : field.message;
@@ -84,19 +72,16 @@ function validateField(field) {
   return isValid;
 }
 
-// Valida en tiempo real, apenas el usuario sale del campo (blur)
 fields.forEach(field => {
   field.input.addEventListener('blur', () => validateField(field));
 });
 
-// Valida todo al enviar
 contactForm.addEventListener('submit', (event) => {
   event.preventDefault();
 
   const allValid = fields.every(validateField);
   if (!allValid) return;
 
-  // Sin backend propio: abrimos el cliente de correo con los datos ya listos
   const name = fields[0].input.value;
   const email = fields[1].input.value;
   const subject = fields[2].input.value;
@@ -109,16 +94,12 @@ contactForm.addEventListener('submit', (event) => {
   contactForm.reset();
 });
 
-// ===================================
-// MARQUEE AUTOMÁTICO DE SKILLS (pausa al hover)
-// ===================================
+
 function initMarquee(track, speed = 60) {
   const items = Array.from(track.children);
 
-  // Solo activa el marquee si hay suficientes elementos para justificarlo
   if (items.length <= 2) return;
 
-  // Duplica las cards una vez, así el loop se ve continuo sin "salto" al reiniciar
   items.forEach(item => track.appendChild(item.cloneNode(true)));
   track.classList.add('is-marquee');
 
@@ -146,19 +127,15 @@ function initMarquee(track, speed = 60) {
   requestAnimationFrame(step);
 }
 
-// Se aplica automáticamente a las 4 categorías sin repetir código por cada una
 document.querySelectorAll('.skills-cards').forEach(track => initMarquee(track));
 
-// ===================================
-// FILTRO DE PROYECTOS: buscador + botón "Todos"
-// ===================================
+
 const filterAllBtn = document.querySelector('.filter-btn[data-filter="Todos"]');
 const techInput = document.getElementById('techSearchInput');
 const techList = document.getElementById('techSearchList');
 const projectCards = document.querySelectorAll('.project-card');
 const projectsGrid = document.querySelector('.projects-grid');
 
-// Tecnologías reales, tomadas de Skills (no solo de las cards de proyecto)
 const allSkills = Array.from(document.querySelectorAll('.skill-name')).map(el => el.textContent.trim());
 
 function renderTechList(filterText = '') {
@@ -225,18 +202,46 @@ document.addEventListener('click', (event) => {
 });
 
 
-// ===================================
-// TARJETAS DE PROYECTO EXPANDIBLES
-// ===================================
+document.querySelectorAll('.project-tech-list').forEach(list => {
+  const limit = parseInt(list.dataset.limit, 10) || 3;
+  const tags = Array.from(list.children);
+
+  if (tags.length <= limit) return; 
+
+  tags.forEach((tag, index) => {
+    if (index >= limit) tag.classList.add('tech-tag-hidden');
+  });
+
+  const moreBadge = document.createElement('li');
+  moreBadge.className = 'tech-tag tech-tag-more';
+  moreBadge.textContent = `+${tags.length - limit} más`;
+  list.appendChild(moreBadge);
+});
+
 projectsGrid.addEventListener('click', (event) => {
   const toggleBtn = event.target.closest('.project-toggle');
   if (!toggleBtn) return;
 
   const card = toggleBtn.closest('.project-card');
   const details = card.querySelector('.project-details');
+  const techList = card.querySelector('.project-tech-list');
+  const moreBadge = techList.querySelector('.tech-tag-more');
   const isOpen = card.classList.toggle('is-expanded');
+
+  techList.querySelectorAll('.tech-tag-hidden').forEach(tag => {
+    tag.classList.toggle('is-visible', isOpen);
+  });
+  if (moreBadge) moreBadge.style.display = isOpen ? 'none' : '';
 
   toggleBtn.setAttribute('aria-expanded', isOpen);
   toggleBtn.querySelector('.toggle-icon').textContent = isOpen ? '▴' : '▾';
+  toggleBtn.childNodes[0].textContent = isOpen ? 'Ver menos ' : 'Ver más detalles ';
+
   details.style.maxHeight = isOpen ? `${details.scrollHeight}px` : null;
 });
+
+const backToTop = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('is-visible', window.scrollY > 400);
+}, { passive: true });

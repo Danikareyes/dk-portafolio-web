@@ -1,79 +1,151 @@
-🚀 Portafolio Web Profesional e Interactivo
-Bienvenido al repositorio de mi portafolio web profesional. Este proyecto ha sido diseñado y desarrollado como una plataforma interactiva, accesible y totalmente adaptativa (responsive) para presentar mi perfil académico/profesional, proyectos destacados y stack tecnológico.
+# Portafolio Web Profesional
 
-📌 Tabla de Contenidos
-Descripción del Proyecto
+Sitio web personal e interactivo de **Mariana Reyes**, estudiante de Ingeniería en Software y Licenciada en Administración de Empresas. Reúne su perfil, sus habilidades técnicas, sus proyectos destacados y una página de Design System que documenta las decisiones visuales del sitio.
 
-Demo y Enlaces
+Desarrollado desde cero con **HTML5, CSS3 y JavaScript**, sin frameworks ni librerías externas.
 
-Características Principales
+**[Ver el sitio en vivo](https://danikareyes.github.io/dk-portafolio-web/)** · **[Ver el Design System](https://danikareyes.github.io/dk-portafolio-web/design-system.html)**
 
-Tecnologías Utilizadas
+---
 
-Estructura del Proyecto
+## Capturas
 
-Design System & Componentes
+| Inicio (tema claro) | Inicio (tema oscuro) |
+| :---: | :---: |
+| ![Sección de inicio en tema claro](assets/img/screenshots/inicio-claro.png) | ![Sección de inicio en tema oscuro](assets/img/screenshots/inicio-oscuro.png) |
 
-Instrucciones de Uso Local
+| Proyectos destacados | Design System |
+| :---: | :---: |
+| ![Sección de proyectos con filtro y tarjetas](assets/img/screenshots/proyectos.png) | ![Página del Design System](assets/img/screenshots/design-system.png) |
 
-Contacto
+| Versión móvil |
+| :---: |
+| ![Sitio en un teléfono móvil](assets/img/screenshots/movil.png) |
 
-📄 Descripción del Proyecto
-El objetivo de esta plataforma es proporcionar una experiencia de usuario (UX) fluida e interactiva que comunique de manera clara mi formación académica, competencias técnicas y proyectos desarrollados.
+---
 
-El proyecto aplica estándares modernos de HTML5 Semántico, arquitectura visual mediante Variables CSS, y lógica modular con JavaScript vanilla.
+## Secciones del sitio
 
-🔗 Demo y Enlaces
-Repositorio en GitHub: https://github.com/Danikareyes/dk-portafolio-web
+| Sección | Contenido |
+| --- | --- |
+| **Inicio** | Presentación, perfil profesional y llamadas a la acción. |
+| **Sobre mí** | Trayectoria, formación, experiencia e intereses. |
+| **Skills** | Habilidades por categoría (Frontend, Backend, Bases de datos, Cloud y herramientas) con su nivel de dominio. |
+| **Proyectos** | Tarjetas con problema que resuelve, tecnologías y enlace al repositorio, con filtro por tecnología. |
+| **Design System** | Paleta, tipografía, espaciado, bordes, sombras y componentes reutilizables. |
+| **Contacto** | Datos de contacto y formulario con validación. |
 
-Sitio Web Desplegado (GitHub Pages): [Próximamente desplegado]
+---
 
-✨ Características Principales
-Estructura Semántica y Accesible: Implementación estricta de HTML5 semántico para mejorar SEO y accesibilidad.
+## Tecnologías
 
-Diseño Responsive: Adaptabilidad completa a dispositivos móviles, tablets y monitores de escritorio mediante CSS Grid y Flexbox.
+| Área | Herramientas |
+| --- | --- |
+| Estructura | HTML5 semántico (`header`, `nav`, `main`, `section`, `article`, `address`, `figure`, `footer`) |
+| Estilos | CSS3 con Custom Properties, Flexbox, Grid, `clamp()`, media queries y `:has()` |
+| Comportamiento | JavaScript (ES6+) sin librerías |
+| Control de versiones | Git y GitHub |
+| Publicación | GitHub Pages |
+| Entorno | Visual Studio Code y la extensión Live Server |
+| Íconos | [Devicon](https://devicon.dev) (SVG locales, sin dependencias externas) |
 
-Design System Integrado: Documentación y muestra visual de paleta de colores, tipografía, escalas de espaciado y componentes reutilizables (cards, botones, badges, etc.).
+---
 
-Interactividad y Persistencia: Menú de navegación responsive, filtros de proyectos por tecnología, alternancia de temas (Light/Dark Mode) con persistencia vía localStorage.
+## Funcionalidades de JavaScript
 
-🛠️ Tecnologías Utilizadas
-HTML5: Maquetación semántica y estructurada.
+1. **Menú responsive**: botón hamburguesa animado que se cierra al elegir una sección.
+2. **Tema claro y oscuro**: se recuerda la preferencia con `localStorage`.
+3. **Validación del formulario**: en tiempo real y al enviar, con mensajes de error y de estado accesibles.
+4. **Marquee de skills**: cinta horizontal que se pausa al pasar el mouse y respeta `prefers-reduced-motion`.
+5. **Filtro de proyectos**: botón «Todos» y buscador de tecnología con lista desplegable.
+6. **Tarjetas de proyecto expandibles**: muestran lo esencial y despliegan el detalle bajo demanda.
+7. **Botón «volver arriba»**: aparece al hacer scroll.
 
-CSS3: Custom Properties (variables), Flexbox, CSS Grid y Media Queries.
+> El formulario valida los datos en el navegador. El envío real es opcional: se activa pegando una clave gratuita de [Web3Forms](https://web3forms.com) en `assets/js/main.js` (`WEB3FORMS_KEY`).
 
-JavaScript: Manipulación del DOM, eventos e interactividad.
+---
 
-Git & GitHub: Control de versiones y despliegue continuo vía GitHub Pages.
+## Design System
 
-📁 Estructura del Proyecto
-PORTAFOLIO/
-├── assets/
-│   ├── css/
-│   │   ├── styles.css          # Estilos generales, variables CSS
-│   │   ├── design-system.css   # Estilos para la guía de componentes
-│   │   └── responsive.css      # Reglas de adaptabilidad(Media Queries)
-│   ├── js/
-│   │   └── main.js             # Lógica e interactividad
-│   └── img/                    # Recurso de imágenes y capturas
-├── index.html                  # Estructura principal
-└── README.md                   # Documentación del proyecto
+La página [`design-system.html`](design-system.html) documenta el sistema visual y usa **exactamente los mismos estilos y componentes** que el sitio principal:
 
-🎨 Design System & Componentes
-El proyecto cuenta con un sistema visual centralizado basado en variables CSS (:root), garantizando consistencia estética en:
+- **Colores**: marca, superficies, texto, degradados y transparencias.
+- **Tipografía**: familias y jerarquía completa (h1, h2, h3, párrafos, texto secundario y enlaces).
+- **Espaciado**: escala de cinco pasos y medidas fluidas.
+- **Bordes y sombras**.
+- **Componentes**: navbar, botones, skills, etiquetas, card de proyecto, tarjetas de contacto, inputs y textarea.
 
-Paleta de Colores: Primario, Secundario, Fondo, Superficie, Texto.
+Los valores se leen en vivo de las variables CSS, así que la documentación nunca queda desactualizada.
 
-Tipografía & Escala de Espaciado: Jerarquía clara y márgenes proporcionales (rem).
+---
 
-Componentes Reutilizables: Botones, tarjetas de proyectos, badges de habilidades y formularios.
+## Estructura del proyecto
 
-📸 Capturas de Pantalla
-(Las capturas de pantalla del sitio web desplegado y la vista móvil serán agregadas en la versión final).
+```text
+dk-portafolio-web/
+├── index.html
+├── design-system.html
+├── README.md
+├── .gitignore
+└── assets/
+    ├── css/
+    │   ├── styles.css          # Variables, base y componentes
+    │   ├── responsive.css      # Solo lo que cambia en pantallas pequeñas
+    │   └── design-system.css   # Solo el layout de la documentación
+    ├── js/
+    │   ├── main.js             # Comportamiento del sitio
+    │   └── design-system.js    # Lectura en vivo de las variables CSS
+    └── img/
+        ├── icons/              # Íconos de tecnologías (SVG)
+        ├── projects/           # Capturas de los proyectos
+        └── screenshots/        # Capturas para este README
+```
 
-✉️ Contacto
-Desarrollado por: Mariana Reyes
+---
 
-GitHub: @Danikareyes
+## Cómo visualizar el proyecto
 
-Correo Profesional: danikreyes01@gmail.com
+No requiere instalación ni proceso de compilación.
+
+**En línea:** abre <https://danikareyes.github.io/dk-portafolio-web/>.
+
+**En tu computadora:**
+
+```bash
+git clone https://github.com/Danikareyes/dk-portafolio-web.git
+cd dk-portafolio-web
+```
+
+Después, abre `index.html` con doble clic, o con **Live Server** desde Visual Studio Code (clic derecho sobre `index.html` → *Open with Live Server*).
+
+Se recomienda un navegador actualizado (Chrome, Edge, Firefox o Safari).
+
+---
+
+## Decisiones de diseño y buenas prácticas
+
+- **Estilos organizados por responsabilidad**: `styles.css` define variables y componentes, `responsive.css` contiene solo los cambios por tamaño de pantalla y `design-system.css` solo sirve a la documentación.
+- **Variables CSS como única fuente de verdad**: colores, tipografía, espaciados, radios y sombras. El tema oscuro solo redefine los valores que cambian.
+- **Diseño adaptable sin valores fijos**: tamaños de texto y medidas fluidas con `clamp()`, y tres puntos de quiebre (1024, 768 y 480 px) para computadoras, tablets y teléfonos.
+- **Sin dependencias externas**: fuentes del sistema, íconos SVG locales y JavaScript sin librerías, lo que mejora la velocidad y evita fallos por conexión.
+- **Accesibilidad**: HTML semántico, `label` en cada campo, `aria-live` en los mensajes, foco visible con teclado, textos alternativos y respeto a `prefers-reduced-motion`.
+- **Código mantenible**: reglas de validación declaradas como datos, delegación de eventos y una función reutilizable para cada comportamiento.
+- **Control de versiones**: historial de commits por hito de trabajo.
+
+---
+
+## Proyectos destacados
+
+| Proyecto | Repositorio |
+| --- | --- |
+| Sistema de Alertas para Recolección de Basura | [alertas-recoleccion-basura](https://github.com/Danikareyes/alertas-recoleccion-basura) |
+| Gestión de Trajes Folclóricos | [gestion-trajes-folcloricos](https://github.com/Danikareyes/gestion-trajes-folcloricos) |
+| Gestión de Incidencias Ciudadanas | [gestion-incidencias-ciudadanas](https://github.com/Danikareyes/gestion-incidencias-ciudadanas) |
+
+---
+
+## Autora y créditos
+
+Desarrollado por **Mariana Reyes** · GitHub: [@Danikareyes](https://github.com/Danikareyes)
+
+Los íconos de tecnologías provienen de [Devicon](https://devicon.dev) (licencia MIT); las marcas pertenecen a sus respectivos dueños.
